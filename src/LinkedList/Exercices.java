@@ -79,20 +79,40 @@ public class Exercices {
     }
 
     //7.
-    public Node concat(Node list1, Node list2) {
-        Node list3 = null;
-        if (list1 == null && list2 == null) {
+    public Node concat(Node nodeChain1, Node nodeChain2) {
+        //Check if node chains are null first, then...
+        if (nodeChain1 == null || nodeChain2 == null) {
             throw new IllegalArgumentException();
         }
-        while (list1.next != null) {
-            list1 = list1.next;
-            list3 = list1;
+        //We need newNodeChain to point always to the first node from the first nodeChain1 and that is because
+        //the nodes are reference only in one direction wich means we have to return the first node in order
+        //to have all the next node.If we return the last node , that one doesn't reference anything and we
+        //receive only the last node.
+        Node newNodeChain = new Node(nodeChain1.data);
+        //then we have a current node wich allows us to append new nodes to the chain.
+        Node currentNode = newNodeChain;
+
+        while (nodeChain1.next != null) {
+            //first we assign to nodeChain1 the value of the next node of nodechain1
+            nodeChain1 = nodeChain1.next;
+            //Then we create a new node and pass it the data from the next nodeChain1.
+            Node nextNode = new Node(nodeChain1.data);
+            //Then we assign that new node to the new list we want to create when we say that the new node in that
+            //list is the nextNode;
+            currentNode.next = nextNode;
+            //And then we make newNodeChain point in the next iteration to the next node that we just added.
+            currentNode = currentNode.next;
+
         }
-        while (list2.next != null) {
-            list2 = list2.next;
-            list3 = list2;
+
+        while (nodeChain2.next != null) {
+            nodeChain2 = nodeChain2.next;
+            Node nextNode = new Node(nodeChain2.data);
+            currentNode.next = nextNode;
+            currentNode = currentNode.next;
         }
-        return list3;
+        return newNodeChain;
     }
+
 
 }
