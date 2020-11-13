@@ -38,15 +38,38 @@ public class Main {
 //        Node asd = exercices.copy(start);
 //        System.out.println(exercices.size(asd) + "\n");
 //        //5.
-        Node theNode = exercices.sublist(start, 0, 5);
-        System.out.println(exercices.sum(theNode));
-        //6.
-        Node startHere = new Node(1);
-        Node pointer = startHere;
-        pointer.next = new Node(2);
-        pointer = pointer.next;
-        pointer.next = new Node(3);
-        Node ex6 = exercices.concat(start,startHere);
-        System.out.println(exercices.sum(ex6));
-    }
-}
+//        Node theNode = exercices.sublist(start, 0, 5);
+//        System.out.println(exercices.sum(theNode));
+//        //6.
+//        Node startHere = new Node(1);
+//        Node pointer = startHere;
+//        pointer.next = new Node(2);
+//        pointer = pointer.next;
+//        pointer.next = new Node(3);
+//        Node ex6 = exercices.concat(start,startHere);
+//        System.out.println(exercices.sum(ex6));
+
+        //8
+//        exercices.set(start,3,666);
+//        while (start.next != null){
+//            System.out.println(start.data);
+//            start=start.next;
+//        }
+
+        //10
+//        int number = exercices.get(start,1);
+//        System.out.println(number);
+
+        //11
+        exercices.put(start, 1, 666);
+        while (start.next != null) {
+            System.out.println(start.data);
+            start = start.next;
+        }
+        //12.
+//        exercices.swap(start,1,3);
+//        while (start.next != null) {
+//            System.out.println(start.data);
+//            start = start.next;
+//    }
+}}

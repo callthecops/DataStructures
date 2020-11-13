@@ -114,5 +114,89 @@ public class Exercices {
         return newNodeChain;
     }
 
+    //9>Set
+    public void set(Node list, int i, int x) {
+        int count = 0;
+        while (list.next != null) {
+            if (i == count) {
+                list.data = x;
+            }
+            list = list.next;
+            count++;
+        }
+    }
 
+    //10.get
+    public int get(Node list, int i) {
+        if (list == null) {
+            throw new IllegalArgumentException();
+        }
+        int counter = 0;
+        int value = 0;
+        while (list.next != null) {
+            if (i == counter) {
+                value = list.data;
+            }
+
+            list = list.next;
+            counter++;
+        }
+        return value;
+    }
+
+    //11.
+    public void put(Node list, int i, int x) {
+        if (list == null) {
+            throw new IllegalArgumentException();
+        }
+        int counter = 0;
+        while (list.next != null) {
+            if (i - 1 == counter) {
+                Node rightChain = list.next;
+                Node newNode = new Node(x);
+                list.next = newNode;
+                newNode.next = rightChain;
+            }
+            list = list.next;
+            counter++;
+        }
+    }
+
+    //12.
+    public void swap(Node list, int i, int j) {
+        if (list == null) {
+            throw new IllegalArgumentException();
+        }
+        int counter = 0;
+        Node first = null;
+        Node second = null;
+
+        while (list.next != null) {
+            if (counter == i) {
+                first = list;
+
+            }
+            if (counter == j) {
+                second = list;
+
+            }
+            list = list.next;
+            counter++;
+        }
+        while (list.next != null) {
+            if (counter == i) {
+                list = second;
+            }
+            if (counter == j) {
+                list = first;
+            }
+
+            list = list.next;
+            counter++;
+        }
+
+    }
 }
+
+
+
