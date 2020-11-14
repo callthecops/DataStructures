@@ -190,6 +190,35 @@ public class LinkedList {
 
     }
 
+    //13.
+    public Node merged(Node list1, Node list2) {
+        if (list1 == null || list2 == null) {
+            throw new IllegalArgumentException();
+        }
+        Node newNodeChain = new Node(list1.data);
+
+        Node list3 = newNodeChain;
+
+        while (list1.next != null) {
+            list1 = list1.next;
+            Node nextNode = new Node(list1.data);
+            list3.next = nextNode;
+            list3 = list3.next;
+
+        }
+
+        while (list2.next != null) {
+            list2 = list2.next;
+
+            Node nextNode = new Node(list2.data);
+            list3.next = nextNode;
+            list3 = list3.next;
+        }
+
+        return newNodeChain;
+    }
+
+
     public Node getNode(Node list, int index) {
         for (int i = 0; i < index; i++) {
             list = list.next;

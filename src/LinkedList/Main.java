@@ -15,8 +15,19 @@ public class Main {
         p.next = new Node(66);
         p = p.next;
 
-        System.out.println("start= " + start);
-        System.out.println("p= " + p);
+        Node start2 = new Node(77);
+        //P is used for pointer, and is used to "walk through the list";
+        Node pp = start2;
+        //adding a new Node with a value of 33 linked to the previous "start" Node.
+        pp.next = new Node(88);
+        pp = pp.next;
+        pp.next = new Node(99);
+        pp = pp.next;
+        pp.next = new Node(11);
+        pp = pp.next;
+        pp.next = new Node(22);
+        pp = pp.next;
+
 //
 //        Node start = new Node(22), p = start;
 //        for (int i = 0; i < 4; i++) {
@@ -73,6 +84,14 @@ public class Main {
 //            System.out.println(start.data);
 //            start = start.next;
 //        }
+
+        //13.
+        Node list = linkedList.merged(start, start2);
+        while (list.next != null) {
+            System.out.println(list.data);
+            list = list.next;
+        }
+
     }
 
 }
