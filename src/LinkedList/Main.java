@@ -68,7 +68,6 @@ public class Main {
 //            start = start.next;
 //        }
         //12.
-        new LinkedList().swap(start, 0, 1);
 //        linkedList.swap(start, 1, 3);
 //        while (start.next != null) {
 //            System.out.println(start.data);

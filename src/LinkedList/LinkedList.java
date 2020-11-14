@@ -166,17 +166,28 @@ public class LinkedList {
 
     //12.
     public void swap(Node list, int i, int j) {
-        System.out.println("This starts swap method");
-        System.out.println(toString(list));
-        System.out.println(list);
-        System.out.println(i);
-        System.out.println(j);
-
         if (list == null) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("List cannot be null");
         }
-        System.out.println(getNode(list,i).data);
-        System.out.println("here ends swap method");
+        if (i < 0 || j < 0) {
+            throw new IllegalArgumentException("Do not enter negative numbers");
+        }
+
+        Node prevFirst = getNode(list, i - 1);
+        Node prevSecond = getNode(list, j - 1);
+
+        Node first = prevFirst.next;
+        Node second = prevSecond.next;
+
+        Node firstNext = first.next;
+        Node secondNext = second.next;
+
+        prevFirst.next = second;
+        second.next = firstNext;
+
+        prevSecond.next = first;
+        first.next = secondNext;
+
     }
 
     public Node getNode(Node list, int index) {
@@ -185,7 +196,6 @@ public class LinkedList {
         }
         return list;
     }
-
 
 
     public String toString(Node list) {
