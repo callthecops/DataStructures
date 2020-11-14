@@ -15,7 +15,8 @@ public class Main {
         p.next = new Node(66);
         p = p.next;
 
-
+        System.out.println("start= " + start);
+        System.out.println("p= " + p);
 //
 //        Node start = new Node(22), p = start;
 //        for (int i = 0; i < 4; i++) {
@@ -26,50 +27,53 @@ public class Main {
 //            System.out.println(p.data);
 //        }
 //
-        Exercices exercices = new Exercices();
+        LinkedList linkedList = new LinkedList();
         //1.
-//        System.out.println(exercices.size(start) + "\n");
+//        System.out.println(linkedList.size(start) + "\n");
 //        //2.
-//        System.out.println(exercices.sum(start) + "\n");
+//        System.out.println(linkedList.sum(start) + "\n");
 //        //3.
-//        exercices.removeLast(start);
-//        System.out.println(exercices.size(start) + "\n");
+//        linkedList.removeLast(start);
+//        System.out.println(linkedList.size(start) + "\n");
 //        //4.
-//        Node asd = exercices.copy(start);
-//        System.out.println(exercices.size(asd) + "\n");
+//        Node asd = linkedList.copy(start);
+//        System.out.println(linkedList.size(asd) + "\n");
 //        //5.
-//        Node theNode = exercices.sublist(start, 0, 5);
-//        System.out.println(exercices.sum(theNode));
+//        Node theNode = linkedList.sublist(start, 0, 5);
+//        System.out.println(linkedList.sum(theNode));
 //        //6.
 //        Node startHere = new Node(1);
 //        Node pointer = startHere;
 //        pointer.next = new Node(2);
 //        pointer = pointer.next;
 //        pointer.next = new Node(3);
-//        Node ex6 = exercices.concat(start,startHere);
-//        System.out.println(exercices.sum(ex6));
+//        Node ex6 = linkedList.concat(start,startHere);
+//        System.out.println(linkedList.sum(ex6));
 
         //8
-//        exercices.set(start,3,666);
+//        linkedList.set(start,3,666);
 //        while (start.next != null){
 //            System.out.println(start.data);
 //            start=start.next;
 //        }
 
         //10
-//        int number = exercices.get(start,1);
+//        int number = linkedList.get(start,1);
 //        System.out.println(number);
 
         //11
-        exercices.put(start, 1, 666);
-        while (start.next != null) {
-            System.out.println(start.data);
-            start = start.next;
-        }
-        //12.
-//        exercices.swap(start,1,3);
+//        linkedList.put(start, 0, 666);
 //        while (start.next != null) {
 //            System.out.println(start.data);
 //            start = start.next;
-//    }
-}}
+//        }
+        //12.
+        new LinkedList().swap(start, 0, 1);
+//        linkedList.swap(start, 1, 3);
+//        while (start.next != null) {
+//            System.out.println(start.data);
+//            start = start.next;
+//        }
+    }
+
+}
