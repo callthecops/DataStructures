@@ -204,14 +204,14 @@ public class LinkedList {
             Node nextNode = new Node(list1.data);
             list3.next = nextNode;
             list3 = list3.next;
-
         }
 
-        while (list2.next != null) {
-            list2 = list2.next;
+        list3.next = new Node(list2.data);
 
+        while (list2 != null) {
             Node nextNode = new Node(list2.data);
             list3.next = nextNode;
+            list2 = list2.next;
             list3 = list3.next;
         }
 
