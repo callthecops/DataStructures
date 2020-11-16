@@ -218,6 +218,31 @@ public class LinkedList {
         return newNodeChain;
     }
 
+    //14.Rotate left
+
+    void rotateLeft(Node list) {
+        Node p = list, q = list;
+        while (p != null) {
+            p = p.next;
+            if (p != null) {
+                p = p.next;
+            }
+            q = q.next;
+        }
+
+        Node m = q;
+        p = list;
+        Node t = p.next, tt = m.next;
+        while (m.next != null) {
+            tt = m.next;
+            p.next = m;
+            p = m.next = t;
+            t = p.next;
+            m = tt;
+        }
+        p.next = m;
+    }
+
 
     public Node getNode(Node list, int index) {
         for (int i = 0; i < index; i++) {

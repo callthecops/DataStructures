@@ -86,10 +86,18 @@ public class Main {
 //        }
 
         //13.
-        Node list = linkedList.merged(start, start2);
-        while (list.next != null) {
-            System.out.println(list.data);
-            list = list.next;
+//        Node list = linkedList.merged(start, start2);
+//        while (list.next != null) {
+//            System.out.println(list.data);
+//            list = list.next;
+//        }
+
+        //14.
+
+        linkedList.rotateLeft(start);
+        while (start.next != null) {
+            System.out.println(start.data);
+            start = start.next;
         }
 
     }
