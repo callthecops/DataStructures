@@ -1,4 +1,4 @@
-package Collections;
+package Collections.Queue;
 
 import java.util.Collections;
 import java.util.Queue;
