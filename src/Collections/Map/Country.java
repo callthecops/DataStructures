@@ -7,6 +7,8 @@ public class Country {
     private int population;
     private double abAge;
 
+
+
     public Country(String name, String language, int area, int population, double abAge) {
         this.name = name;
         this.language = language;
