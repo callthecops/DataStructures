@@ -6,12 +6,18 @@ public class Main {
     public static void main(String[] args) {
         //1:
         List<String> strings = new ArrayList<>();
-        Collections.addAll(strings, "First", "Second", "Third");
+        Collections.addAll(strings, "First", "Second", "Third","Second");
 
 //        int total = chars(strings);
 //        System.out.println(total);
         //2:
-        print(strings);
+        //print(strings);
+//        //3
+//        int first = frequencyFor(strings, "Second");
+//        System.out.println(first);
+//        int second = frequencyIt(strings, "Second");
+//        System.out.println(second);
+        //4
 
     }
 
@@ -34,4 +40,29 @@ public class Main {
             System.out.println("Object: " + obj);
         }
     }
+
+    //3:with enhanced for loop
+    public static <E> int frequencyFor(Collection<E> c, E e) {
+        int count = 0;
+        for (E object : c) {
+            if (object.equals(e)) {
+                count = count + 1;
+            }
+        }
+        return count;
+    }
+
+    //3:with iterator
+    public static <E> int frequencyIt(Collection<E> c, E e) {
+        Iterator iterator = c.iterator();
+        int count = 0;
+        while (iterator.hasNext()) {
+            Object obj = iterator.next();
+            if (obj.equals(e)) {
+                count++;
+            }
+        }
+        return count;
+    }
+    //4:
 }
