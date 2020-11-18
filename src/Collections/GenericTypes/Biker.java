@@ -7,4 +7,12 @@ public class Biker extends Person {
         super(name, age);
         this.gearValue = gearValue;
     }
+
+    public int getGearValue() {
+        return gearValue;
+    }
+
+    public void setGearValue(int gearValue) {
+        this.gearValue = gearValue;
+    }
 }
