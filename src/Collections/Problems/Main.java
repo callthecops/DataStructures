@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         //1:
         List<String> strings = new ArrayList<>();
-        Collections.addAll(strings, "First", "Second", "Third","Second");
+        Collections.addAll(strings, "First", "Second", "Third", "Second");
 
 //        int total = chars(strings);
 //        System.out.println(total);
@@ -18,7 +18,8 @@ public class Main {
 //        int second = frequencyIt(strings, "Second");
 //        System.out.println(second);
         //4
-
+        System.out.println(getLastFor(strings));
+        System.out.println(getLastIt(strings));
     }
 
     //1:
@@ -64,5 +65,23 @@ public class Main {
         }
         return count;
     }
-    //4:
+
+    //4:with for loop
+    public static <E> E getLastFor(List<E> lIst) {
+        E last = null;
+        for (E element : lIst) {
+            last = element;
+        }
+        return last;
+    }
+
+    //4:with iterator
+    public static <E> E getLastIt(List<E> list) {
+        Iterator iterator = list.iterator();
+        E last = null;
+        while (iterator.hasNext()) {
+            last = (E) iterator.next();
+        }
+        return last;
+    }
 }
