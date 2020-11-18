@@ -24,6 +24,8 @@ public class Main {
 //        System.out.println(getElementAtFor(strings, 3));
 //        System.out.println(getElementAtIt(strings, 3));
         //6.
+        String[] array = {"one", "two", "three"};
+        System.out.println(toCollection(array));
     }
 
     //1:
@@ -111,5 +113,11 @@ public class Main {
             element = (E) obj;
         }
         return element;
+    }
+
+    //6:
+    public static <E> Collection<E> toCollection(E[] a) {
+
+        return Arrays.asList(a);
     }
 }
