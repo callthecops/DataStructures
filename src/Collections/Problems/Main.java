@@ -18,8 +18,12 @@ public class Main {
 //        int second = frequencyIt(strings, "Second");
 //        System.out.println(second);
         //4
-        System.out.println(getLastFor(strings));
-        System.out.println(getLastIt(strings));
+//        System.out.println(getLastFor(strings));
+//        System.out.println(getLastIt(strings));
+        //5
+//        System.out.println(getElementAtFor(strings, 3));
+//        System.out.println(getElementAtIt(strings, 3));
+        //6.
     }
 
     //1:
@@ -77,11 +81,35 @@ public class Main {
 
     //4:with iterator
     public static <E> E getLastIt(List<E> list) {
-        Iterator iterator = list.iterator();
+
         E last = null;
-        while (iterator.hasNext()) {
+        for (Iterator iterator = list.iterator(); iterator.hasNext(); ) {
             last = (E) iterator.next();
         }
         return last;
+    }
+
+    //5:for loop
+    public static <E> E getElementAtFor(List<E> list, int index) {
+        E object = null;
+        int counter = 0;
+        for (E element : list) {
+            if (index == counter) {
+                object = element;
+            }
+            counter++;
+        }
+        return object;
+    }
+
+    //5:for loop
+    public static <E> E getElementAtIt(List<E> list, int index) {
+        E element = null;
+        int i = 0;
+        for (Iterator<E> iterator = list.iterator(); iterator.hasNext() && i++ <= index; ) {
+            Object obj = iterator.next();
+            element = (E) obj;
+        }
+        return element;
     }
 }
