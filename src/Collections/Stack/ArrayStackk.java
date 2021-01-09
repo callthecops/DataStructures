@@ -61,4 +61,12 @@ public class ArrayStackk<E> extends Stack<E> {
         System.arraycopy(elements, 0, a, 0, size);
         elements = (E[]) a;
     }
+
+    public void reverse(){
+        for(int i = 0; i<size/2;i++){
+            E e = elements[i];
+            elements[i] = elements[size-1-i];
+            elements[size-1-i]= e;
+        }
+    }
 }
