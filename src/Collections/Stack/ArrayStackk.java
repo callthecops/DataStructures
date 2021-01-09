@@ -4,6 +4,7 @@ import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class ArrayStackk<E> extends Stack<E> {
+
     private E[] elements;
     private int size;
     private static final int INITIAL_CAPACITY = 100;
@@ -46,12 +47,16 @@ public class ArrayStackk<E> extends Stack<E> {
         return element;
     }
 
+
+
     public int size() {
         return size;
     }
 
     public void resize() {
         assert size == elements.length;
+        //Because generic arrays are not supported in java we have to first initialize it as an object array and then cast
+        //it to an generic(E) array.
         Object[] a = new Object[2 * size];
         System.arraycopy(elements, 0, a, 0, size);
         elements = (E[]) a;
